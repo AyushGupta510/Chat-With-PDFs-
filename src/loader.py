@@ -1,8 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 
-def load_pdf(pdf_path):
-    loader = PyPDFLoader(pdf_path)
-    return loader.load()
+loader = PyPDFLoader("data/AI_Article.pdf")
+docs = loader.load()
 
 # print("\n Type of Docs:")
 # print(type(docs))

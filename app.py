@@ -47,18 +47,3 @@ if question:
             st.write(f"### Chunk {i+1}")
             st.write(doc.page_content[:500])
 
-from src.loader import load_pdf
-
-uploaded_file = st.file_uploader(
-    "Upload PDF",
-    type="pdf"
-)
-
-if uploaded_file:
-
-    file_path = f"data/{uploaded_file.name}"
-
-    with open(file_path, "wb") as f:
-        f.write(uploaded_file.getbuffer())
-
-    docs = load_pdf(file_path)
